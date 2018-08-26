@@ -16,6 +16,7 @@ body {
     height: 640px;
     display: flex;
     flex-wrap: wrap; /*multi-line*/
+    perspective: 1000px;
 }
 
 /* When we add display: flex to a container we get some properties as default:
@@ -39,6 +40,8 @@ flex-container {
     margin: 5px;
     position: relative;
     transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
 }
 
 .memory-card:active {
@@ -58,4 +61,9 @@ flex-container {
     position: absolute;
     border-radius: 5px;
     background: #00386d;
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
 }

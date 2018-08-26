@@ -5,10 +5,53 @@
 }
 
 body {
-    background: orange;
+    background: #218ce8;
     height: 100vh; /*view port height, 100% of the available height space */
+    display: flex;
 }
 
-img {
-    width: 100px;
+.memory-game {
+    margin: auto;
+    width: 640px;
+    height: 640px;
+    display: flex;
+    flex-wrap: wrap; /*multi-line*/
+}
+
+/* When we add display: flex to a container we get some properties as default:
+
+flex-item {
+    flex: 1; // each item take the same amount space of the screen
+}
+
+flex-container {
+    flex-direction: row; // your items should be laid out in a row
+    flex-wrap: nowrap; // just one row
+    justify-content: flex-start; // position left to right 
+    align-items: stretch; // stretch out across the container height
+}
+
+*/
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.33% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+}
+
+.memory-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: #00386d;
 }

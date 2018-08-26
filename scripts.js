@@ -2,6 +2,7 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let matches = 0;
 
 function flipCard() {
     if (lockBoard) return;
@@ -34,7 +35,18 @@ function disableCards() {
     // it's a match
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+    levelComplete();
     resetBoard();
+}
+
+function levelComplete() {
+    matches += 1;
+
+    setTimeout(() => {
+        if (matches === (cards.length / 2)) {
+            alert('Level complete!');
+        }
+    }, 1600);
 }
 
 function unflipCards() {
@@ -61,4 +73,3 @@ function resetBoard() {
 })();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
-

@@ -1,0 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: orange;
+    height: 100vh; /*view port height, 100% of the available height space */
+}

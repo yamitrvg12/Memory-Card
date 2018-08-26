@@ -8,3 +8,7 @@ body {
     background: orange;
     height: 100vh; /*view port height, 100% of the available height space */
 }
+
+img {
+    width: 100px;
+}
